@@ -30,10 +30,20 @@ export function createNote(note, laneId) {
  }
 
 export function updateNote(note) {
+  console.log('update note');
   return {
     type: UPDATE_NOTE,
     note,
   };
+}
+
+export function updateNoteRequest(note) {
+  console.log('update note req');
+  return (dispatch) => {
+    return callApi('notes', 'put', {id: note.id, task: note.task }).then(noteResp => {
+      dispatch(updateNote(noteResp));
+    });
+  }
 }
 
 export function deleteNote(noteId, laneId) {
