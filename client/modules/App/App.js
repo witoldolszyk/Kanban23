@@ -55,6 +55,4 @@ function mapStateToProps(store) {
   };
 }
 
-export default connect(mapStateToProps)(App);import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
-
+export default connect(mapStateToProps)(App);
